@@ -1,0 +1,38 @@
+[package]
+name = "xp_blake3"
+version = "0.1.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+description = ""
+authors = ["Grapple228 <greenapple228882@yandex.ru>"]
+readme = "README.md"
+repository = "https://github.com/Grapple228/rust_xp_blake3.git"
+
+[lints.rust]
+unsafe_code = "forbid"
+unused = { level = "allow", priority = -1 } # For exploratory dev.
+
+[dependencies]
+# Async
+tokio = { version = "1", features = ["full"] }
+# Tracing
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+# Other
+derive_more = {version = "1", features = ["from"] }
+
+# Hashing & Encoding
+blake3 = "1.8.2"
+# Serialization
+bs58 = "0.5.1"
+base64 = "0.22.1"
+# for keyed
+uuid = { version = "1.16.0", features = ["fast-rng", "v4"] }
+# for comparsion
+sha2 = "0.10.9"
+
+# for xof
+hex = "0.4"
+
+[dev-dependencies]
+anyhow = "1"
